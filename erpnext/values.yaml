@@ -59,7 +59,7 @@ nginx:
     whenUnsatisfiable: DoNotSchedule
   envVars:
     - name: LOCAL_IP
-      value: 192.168.1.101
+      value: order.traefik.me
   initContainers: []
   sidecars: []
 
@@ -275,11 +275,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
     # cert-manager.io/cluster-issuer: letsencrypt-prod
   hosts:
-  - host: offline.localhost
-    paths:
-    - path: /
-      pathType: ImplementationSpecific
-  - host: 192.168.1.101
+  - host: order.traefik.me
     paths:
     - path: /
       pathType: ImplementationSpecific
