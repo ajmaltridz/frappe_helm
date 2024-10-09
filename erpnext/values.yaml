@@ -281,7 +281,7 @@ ingress:
     paths:
     - path: /
       pathType: ImplementationSpecific
-  - host: app1.{ip:.*}.traefik.me
+  - host: app1.192.168.1.101.traefik.me
     paths:
     - path: /
       pathType: ImplementationSpecific
