@@ -279,6 +279,10 @@ ingress:
     paths:
     - path: /
       pathType: ImplementationSpecific
+  - host: 192.168.1.101
+    paths:
+    - path: /
+      pathType: ImplementationSpecific
   tls: []
   #  - secretName: auth-server-tls
   #    hosts:
