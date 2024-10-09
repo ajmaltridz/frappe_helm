@@ -10,8 +10,8 @@
 # dbRds: false
 
 image:
-  repository: frappe/erpnext
-  tag: v15.38.0
+  repository: dummy
+  tag: dummy
   pullPolicy: IfNotPresent
 
 nginx:
@@ -360,7 +360,8 @@ jobs:
     affinity: {}
     tolerations: []
 
-imagePullSecrets: []
+imagePullSecrets:
+  - name: myregistrykey
 nameOverride: ""
 fullnameOverride: ""
 
