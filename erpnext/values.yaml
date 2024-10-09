@@ -57,7 +57,8 @@ nginx:
     maxSkew: 1
     topologyKey: kubernetes.io/hostname
     whenUnsatisfiable: DoNotSchedule
-  envVars: []
+  envVars:
+    - LOCAL_IP: "192.168.1.101"
   initContainers: []
   sidecars: []
 
