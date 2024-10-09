@@ -58,7 +58,8 @@ nginx:
     topologyKey: kubernetes.io/hostname
     whenUnsatisfiable: DoNotSchedule
   envVars:
-    - LOCAL_IP: 192.168.1.101
+    - name: LOCAL_IP
+      value: 192.168.1.101
   initContainers: []
   sidecars: []
 
