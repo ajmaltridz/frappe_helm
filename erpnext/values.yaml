@@ -59,9 +59,9 @@ nginx:
     whenUnsatisfiable: DoNotSchedule
   envVars:
     - name: LOCAL_IP
-      value: order.nip.io
+      value: 192-168-1-101.nip.io
     - name: CLOUDFLARE
-      value: order.192.168.1.101.nip.io
+      value: 192.168.1.101.nip.io
   initContainers: []
   sidecars: []
 
@@ -277,11 +277,11 @@ ingress:
     # kubernetes.io/tls-acme: "true"
     # cert-manager.io/cluster-issuer: letsencrypt-prod
   hosts:
-  - host: order.nip.io
+  - host: 192-168-1-101.nip.io
     paths:
     - path: /
       pathType: ImplementationSpecific
-  - host: order.192.168.1.101.nip.io
+  - host: 192.168.1.101.nip.io
     paths:
     - path: /
       pathType: ImplementationSpecific
