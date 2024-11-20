@@ -74,6 +74,12 @@ spec:
           - name: nginx-config
             mountPath: /etc/nginx/conf.d
           {{- end }}
+          {{- if .Values.nginx.tls }}
+          - name: nginx-tls-cert
+            mountPath: /etc/nginx/conf.d/tls
+          - name: nginx-tls-key
+            mountPath: /etc/nginx/conf.d/tls
+          {{- end }}
       volumes:
         - name: sites-dir
           {{- if .Values.persistence.worker.enabled }}
@@ -91,6 +97,14 @@ spec:
         - name: nginx-config
           configMap:
             name: {{ include "erpnext.fullname" . }}-nginx-config
+        {{- end }}
+        {{- if .Values.nginx.tls }}
+        - name: nginx-tls-cert
+          configMap:
+            name: {{ .Values.nginx.tls.cert }}
+        - name: nginx-tls-key
+          configMap:
+            name: {{ .Values.nginx.tls.key }}
         {{- end }}
       {{- with .Values.nginx.nodeSelector }}
       nodeSelector:

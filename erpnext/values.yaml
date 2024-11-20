@@ -24,6 +24,9 @@ nginx:
     targetMemory: 75
   # config: |
   #   # custom conf /etc/nginx/conf.d/default.conf
+  # tls:
+  #   cert:
+  #   key:
   environment:
     upstreamRealIPAddress: "127.0.0.1"
     upstreamRealIPRecursive: "off"
