@@ -6,5 +6,5 @@ metadata:
   labels:
     {{- include "erpnext.labels" . | nindent 4 }}
 data:
-  default.conf: {{ .Values.nginx.config | quote }}
+  frappe.conf: {{ .Values.nginx.config | quote }}
 {{- end }}
