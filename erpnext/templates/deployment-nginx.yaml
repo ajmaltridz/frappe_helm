@@ -98,8 +98,8 @@ spec:
         {{- end }}
         {{- if .Values.nginx.tls }}
         - name: nginx-tls-cert
-          configMap:
-            name: {{ .Values.nginx.tls.cert }}
+          secret:
+            secretName: {{ .Values.nginx.tls.cert }}
         {{- end }}
       {{- with .Values.nginx.nodeSelector }}
       nodeSelector:
